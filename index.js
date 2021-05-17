@@ -1,7 +1,12 @@
 // Your code here
 function mapToNegativize(array){
-    let newA = array.map(element => element * -1)
+    let newA= []
+    for(let i = 0; i < array.length; i++){
+        newA.push(array[i]*(-1))
+    }
     return newA
+    // let newA = array.map(element => element * -1)
+    // return newA
 }
 
 function mapToNoChange(array){
@@ -17,6 +22,24 @@ function mapToSquare(array){
 }
 
 function reduceToTotal(array, start = 0){
-    const reducer = function(start, number){number + start}
-    return array.reduce(reducer, start)
+    let total = start 
+    for(let i = 0; i < array.length; i++){
+        total = total + array[i]
+    }
+    return total
+}
+
+function reduceToAllTrue(array){
+
+    for(let i = 0; i < array.length; i++){
+        if(array[i] === false) return false 
+    }
+    return true 
+}
+
+function reduceToAnyTrue(array){
+    for(let i = 0; i < array.length; i++){
+        if(array[i] === true) return true 
+    }
+    return false
 }
